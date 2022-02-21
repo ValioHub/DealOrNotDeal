@@ -12,32 +12,31 @@ namespace Game
 {
     public partial class Form1 : Form
     {
-        double[] money = new double[21] { 0.10, 0.20, 0.50, 1, 10, 20, 50, 100, 200, 300, 750, 1000, 2500, 5000, 7500, 10000, 12500, 15000, 25000, 50000, 100000 };
-        double[] offerGen = new double[21] { 0.10, 0.20, 0.50, 1, 10, 20, 50, 100, 200, 300, 750, 1000, 2500, 5000, 7500, 10000, 12500, 15000, 25000, 50000, 100000 };
-        double[] buttonList = new double[21];
-        int[] tempList = new int[21];
+        double[] money = new double[22] {0, 0.10, 0.20, 0.50, 1, 10, 20, 50, 100, 200, 300, 750, 1000, 2500, 5000, 7500, 10000, 12500, 15000, 25000, 50000, 100000};
+        double[] buttonList = new double[22];
+        int[] tempList = new int[22];
         Random random = new Random();
-        bool[] buttonFlag = new bool[21];
+        bool[] buttonFlag = new bool[22];
         double newOffer;
-        bool accept = false;
         int offerCounter = 0;
         int offerRemainder;
         string tempLabel;
         double finalValue;
+        double all = 229931.8;
+        int allBoxex = 22;
         private bool IsUsed(int temp)
         {
             bool flag = false;
 
-            for (int i = 0; i < 21; i++)
+            for (int i = 0; i < 22; i++)
             {
                 if (tempList[i] == temp)
                 {
                     flag = true;
                 }
-
             }
             return flag;
-        }
+        } // Премахване на button-ите
         private void LostValues(string tempLabel)
         {
             if (textBox1.Text.ToString() == tempLabel)
@@ -128,120 +127,351 @@ namespace Game
             {
                 textBox22.Visible = false;
             }
-        }
+        } // Премахване на label-лите след като се отвори кутия с нейната сума
         private void GenerateNewOffer()
         {
-            double sum = 0;
-            double avg;
-
-            for (int i = 0; i < 21; i++)
-            {
-                sum += offerGen[i];
-
-            }
-            avg = sum / (21 - offerCounter);
-            newOffer = avg;
-
-        }
-        //private void CallZero(string tempLabel)
-        //{
-        //    long val = Convert.ToInt64(tempLabel);
-        //    for (int i = 0; i < 21; i++)
-        //    {
-        //        if (offerGen[i] == val)
-        //        {
-        //            offerGen[i] = 0;
-        //        }
-        //    }
-        //}
-        private double GetFinalValue()
+            newOffer = all / allBoxex;
+        } // Създаване на офертата на Банкера
+        private double GetFinalValue() // Създаване на крайния резултат
         {
-            for (int i = 0; i < 21; i++)
+            for (int i = 0; i < 22; i++)
             {
-                if (offerGen[i] != 0)
+                if (buttonFlag[i] == false)
                 {
-                    finalValue = offerGen[i];
+                    finalValue = buttonList[i];
                 }
             }
-
             return finalValue;
         }
-
-        public Form1()
+        private void OffertGenerate()
         {
-            int temp;
-            for (int i = 0; i < 21; i++)
-            {
-                buttonFlag[i] = false;
-            }
-            for (int i = 0; i < 21; i++)
-            {
-                tempList[i] = 30;
-            }
-            for (int i = 0; i < 21; i++)
-            {
-                temp = random.Next(21);
-                while (IsUsed(temp))
-                {
-                    temp = random.Next(21);
-                }
-                buttonList[i] = money[temp];
-                tempList[i] = temp;
-            }
-            InitializeComponent();
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (buttonFlag[0])
-            {
-                return;
-            }
-            buttonFlag[0] = true;
-            if (accept)
-            {
-                return;
-            }
-            offerCounter++;
-            tempLabel = buttonList[0].ToString();
-            LostValues(tempLabel);
-            MessageBox.Show($"Отворихте {tempLabel}", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            button1.Visible = false;
-            if (offerCounter == 20)
+            if (offerCounter == 21)
             {
                 finalValue = GetFinalValue();
-                MessageBox.Show("Game is over.You won " + finalValue.ToString());
-                accept = true;
+                MessageBox.Show($"Играта приключи. Ти спечели {finalValue} лв");
+                Boxes.Visible = false;
+                sumi1.Visible = false;
+                sumi2.Visible = false;
             }
-
-            if (offerCounter <= 18)
+            if (offerCounter <= 19)
             {
                 if ((offerCounter % 3) == 0)
                 {
                     GenerateNewOffer();
-                    DialogResult dialogResult = MessageBox.Show($"Имате нова оферта и тя е {newOffer}!","Банкера предлага", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    DialogResult dialogResult = MessageBox.Show($"Имате нова оферта и тя е {string.Format("{0:0.00}", newOffer)} лв !", "Банкера предлага", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
                     if (dialogResult == DialogResult.Yes)
                     {
-                        MessageBox.Show("Game is over.You won " + finalValue.ToString());
+                        finalValue = newOffer;
+                        MessageBox.Show($"Играта приключи. Ти спечели {string.Format("{0:0.00}", newOffer)} лв ");
+                        Boxes.Visible = false;
+                        sumi1.Visible = false;
+                        sumi2.Visible = false;
                     }
                 }
                 else
                 {
                     offerRemainder = 3 - (offerCounter % 3);
-                    MessageBox.Show($"Отворете още {offerRemainder}");
+                    if (offerRemainder == 1)
+                    {
+                        MessageBox.Show($"Отворете още {offerRemainder} кутия", "Банкера предлага", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show($"Отворете още {offerRemainder} кутии", "Банкера предлага", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
-            else textBox2.Text = "";
+        } // Обаждането на банкера
+        public Form1()
+        {
+            int temp;
+            for (int i = 0; i < 22; i++)
+            {
+                buttonFlag[i] = false;
+            }
+            for (int i = 0; i < 22; i++)
+            {
+                tempList[i] = 30;
+            }
+            for (int i = 0; i < 22; i++)
+            {
+                temp = random.Next(22);
+                while (IsUsed(temp))
+                {
+                    temp = random.Next(22);
+                }
+                buttonList[i] = money[temp];
+                tempList[i] = temp;
+            }
+            InitializeComponent();
+            
+        }
+        private void button1_Click(object sender, EventArgs e)
+        {
+            buttonFlag[0] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[0].ToString();
+            all -= buttonList[0];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button1.Visible = false;
+            OffertGenerate();
+        }
+        private void button2_Click(object sender, EventArgs e)
+        {
+            buttonFlag[1] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[1].ToString();
+            all -= buttonList[1];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 2 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button2.Visible = false;
+            OffertGenerate();
+        }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            buttonFlag[2] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[2].ToString();
+            all -= buttonList[2];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 3 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button3.Visible = false;
+            OffertGenerate();
+        }
+        private void button4_Click(object sender, EventArgs e)
+        {
+            buttonFlag[3] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[3].ToString();
+            all -= buttonList[3];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 4 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button4.Visible = false;
+            OffertGenerate();
+        }
+        private void button5_Click(object sender, EventArgs e)
+        {
+            buttonFlag[4] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[4].ToString();
+            all -= buttonList[4];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 5 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button5.Visible = false;
+            OffertGenerate();
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            buttonFlag[5] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[5].ToString();
+            all -= buttonList[5];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 6 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button6.Visible = false;
+            OffertGenerate();
+        }
+        private void button7_Click(object sender, EventArgs e)
+        {
+            buttonFlag[6] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[6].ToString();
+            all -= buttonList[6];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 7 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button7.Visible = false;
+            OffertGenerate();
+        }
+        private void button8_Click(object sender, EventArgs e)
+        {
+            buttonFlag[7] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[7].ToString();
+            all -= buttonList[7];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 8 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button8.Visible = false;
+            OffertGenerate();
+        }
+        private void button9_Click(object sender, EventArgs e)
+        {
+            buttonFlag[8] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[8].ToString();
+            all -= buttonList[8];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 9 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button9.Visible = false;
+            OffertGenerate();
         }
         private void button10_Click(object sender, EventArgs e)
         {
-
+            buttonFlag[9] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[9].ToString();
+            all -= buttonList[9];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 10 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button10.Visible = false;
+            OffertGenerate();
         }
-
+        private void button11_Click(object sender, EventArgs e)
+        {
+            buttonFlag[10] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[10].ToString();
+            all -= buttonList[10];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 11 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button11.Visible = false;
+            OffertGenerate();
+        }
         private void button12_Click(object sender, EventArgs e)
         {
-
+            buttonFlag[11] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[11].ToString();
+            all -= buttonList[11];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 12 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button12.Visible = false;
+            OffertGenerate();
         }
-
-       
+        private void button13_Click(object sender, EventArgs e)
+        {
+            buttonFlag[12] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[12].ToString();
+            all -= buttonList[12];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 13 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button13.Visible = false;
+            OffertGenerate();
+        }
+        private void button14_Click(object sender, EventArgs e)
+        {
+            buttonFlag[13] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[13].ToString();
+            all -= buttonList[13];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 14 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button14.Visible = false;
+            OffertGenerate();
+        }
+        private void button15_Click(object sender, EventArgs e)
+        {
+            buttonFlag[14] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[14].ToString();
+            all -= buttonList[14];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 15 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button15.Visible = false;
+            OffertGenerate();
+        }
+        private void button16_Click(object sender, EventArgs e)
+        {
+            buttonFlag[15] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[15].ToString();
+            all -= buttonList[15];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 16 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button16.Visible = false;
+            OffertGenerate();
+        }
+        private void button17_Click(object sender, EventArgs e)
+        {
+            buttonFlag[16] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[16].ToString();
+            all -= buttonList[16];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 17 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button17.Visible = false;
+            OffertGenerate();
+        }
+        private void button18_Click(object sender, EventArgs e)
+        {
+            buttonFlag[17] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[17].ToString();
+            all -= buttonList[17];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 18 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button18.Visible = false;
+            OffertGenerate();
+        }
+        private void button19_Click(object sender, EventArgs e)
+        {
+            buttonFlag[18] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[18].ToString();
+            all -= buttonList[18];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 19 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button19.Visible = false;
+            OffertGenerate();
+        }
+        private void button20_Click(object sender, EventArgs e)
+        {
+            buttonFlag[19] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[19].ToString();
+            all -= buttonList[19];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 20 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button20.Visible = false;
+            OffertGenerate();
+        }
+        private void button21_Click(object sender, EventArgs e)
+        {
+            buttonFlag[20] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[20].ToString();
+            all -= buttonList[20];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 21 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button21.Visible = false;
+            OffertGenerate();
+        }
+        private void button22_Click(object sender, EventArgs e)
+        {
+            buttonFlag[21] = true;
+            offerCounter++;
+            allBoxex--;
+            tempLabel = buttonList[21].ToString();
+            all -= buttonList[21];
+            LostValues(tempLabel);
+            MessageBox.Show($"Отворихте {tempLabel} лв", "Кутия номер 22 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            button22.Visible = false;
+            OffertGenerate();
+        }
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+        }
     }
 }
