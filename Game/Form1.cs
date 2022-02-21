@@ -24,6 +24,7 @@ namespace Game
         double finalValue;
         double all = 229931.8;
         int allBoxex = 22;
+        public static string SetValueForText1 = "";
         private bool IsUsed(int temp)
         {
             bool flag = false;
@@ -148,7 +149,8 @@ namespace Game
             if (offerCounter == 21)
             {
                 finalValue = GetFinalValue();
-                MessageBox.Show($"Играта приключи. Ти спечели {finalValue} лв");
+                label2.Text = finalValue.ToString();
+                
                 Boxes.Visible = false;
                 sumi1.Visible = false;
                 sumi2.Visible = false;
@@ -162,7 +164,7 @@ namespace Game
                     if (dialogResult == DialogResult.Yes)
                     {
                         finalValue = newOffer;
-                        MessageBox.Show($"Играта приключи. Ти спечели {string.Format("{0:0.00}", newOffer)} лв ");
+                        label2.Text = string.Format("{0:0.00}", finalValue) + "лв";
                         Boxes.Visible = false;
                         sumi1.Visible = false;
                         sumi2.Visible = false;
@@ -472,6 +474,22 @@ namespace Game
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
+        }
+
+        private void button24_Click(object sender, EventArgs e)
+        {
+            Application.Restart();
+        }
+
+        private void button23_Click(object sender, EventArgs e)
+        {
+            SetValueForText1 = string.Format("{0:0.00}", finalValue);
+            Form2 Save = new Form2();
+            Save.ShowDialog();
+        }
+        private void button25_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

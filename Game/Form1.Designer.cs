@@ -76,6 +76,11 @@ namespace Game
             this.textBox16 = new System.Windows.Forms.TextBox();
             this.sumi1 = new System.Windows.Forms.Panel();
             this.sumi2 = new System.Windows.Forms.Panel();
+            this.Save = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Restart = new System.Windows.Forms.Button();
+            this.Exit = new System.Windows.Forms.Button();
             this.Boxes.SuspendLayout();
             this.sumi1.SuspendLayout();
             this.sumi2.SuspendLayout();
@@ -609,11 +614,68 @@ namespace Game
             this.sumi2.Size = new System.Drawing.Size(117, 392);
             this.sumi2.TabIndex = 47;
             // 
+            // Save
+            // 
+            this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Save.Location = new System.Drawing.Point(446, 443);
+            this.Save.Name = "Save";
+            this.Save.Size = new System.Drawing.Size(276, 90);
+            this.Save.TabIndex = 48;
+            this.Save.Text = "Запазване на играча и неговата печалба";
+            this.Save.UseVisualStyleBackColor = true;
+            this.Save.Click += new System.EventHandler(this.button23_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(439, 266);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(293, 39);
+            this.label1.TabIndex = 49;
+            this.label1.Text = "Вие спечелихте:";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(439, 294);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(0, 39);
+            this.label2.TabIndex = 50;
+            // 
+            // Restart
+            // 
+            this.Restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Restart.Location = new System.Drawing.Point(446, 347);
+            this.Restart.Name = "Restart";
+            this.Restart.Size = new System.Drawing.Size(126, 90);
+            this.Restart.TabIndex = 51;
+            this.Restart.Text = "Рестартиране на играта";
+            this.Restart.UseVisualStyleBackColor = true;
+            this.Restart.Click += new System.EventHandler(this.button24_Click);
+            // 
+            // Exit
+            // 
+            this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Exit.Location = new System.Drawing.Point(596, 347);
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(126, 90);
+            this.Exit.TabIndex = 52;
+            this.Exit.Text = "Излизане от играта";
+            this.Exit.UseVisualStyleBackColor = true;
+            this.Exit.Click += new System.EventHandler(this.button25_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1257, 608);
+            this.Controls.Add(this.Exit);
+            this.Controls.Add(this.Restart);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.Save);
             this.Controls.Add(this.sumi2);
             this.Controls.Add(this.sumi1);
             this.Controls.Add(this.Boxes);
@@ -625,6 +687,7 @@ namespace Game
             this.sumi2.ResumeLayout(false);
             this.sumi2.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -677,6 +740,11 @@ namespace Game
         private System.Windows.Forms.TextBox textBox16;
         private System.Windows.Forms.Panel sumi1;
         private System.Windows.Forms.Panel sumi2;
+        private System.Windows.Forms.Button Save;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button Restart;
+        private System.Windows.Forms.Button Exit;
     }
 }
 
