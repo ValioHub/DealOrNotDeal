@@ -81,9 +81,12 @@ namespace Game
             this.label2 = new System.Windows.Forms.Label();
             this.Restart = new System.Windows.Forms.Button();
             this.Exit = new System.Windows.Forms.Button();
+            this.Info = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.Boxes.SuspendLayout();
             this.sumi1.SuspendLayout();
             this.sumi2.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -617,7 +620,7 @@ namespace Game
             // Save
             // 
             this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save.Location = new System.Drawing.Point(418, 481);
+            this.Save.Location = new System.Drawing.Point(19, 215);
             this.Save.Name = "Save";
             this.Save.Size = new System.Drawing.Size(304, 90);
             this.Save.TabIndex = 48;
@@ -629,7 +632,7 @@ namespace Game
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(439, 258);
+            this.label1.Location = new System.Drawing.Point(12, 18);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(284, 38);
             this.label1.TabIndex = 49;
@@ -639,7 +642,7 @@ namespace Game
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(439, 294);
+            this.label2.Location = new System.Drawing.Point(12, 56);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(0, 38);
             this.label2.TabIndex = 50;
@@ -647,7 +650,7 @@ namespace Game
             // Restart
             // 
             this.Restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Restart.Location = new System.Drawing.Point(418, 374);
+            this.Restart.Location = new System.Drawing.Point(19, 119);
             this.Restart.Name = "Restart";
             this.Restart.Size = new System.Drawing.Size(154, 90);
             this.Restart.TabIndex = 51;
@@ -658,7 +661,7 @@ namespace Game
             // Exit
             // 
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(597, 374);
+            this.Exit.Location = new System.Drawing.Point(197, 119);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(126, 90);
             this.Exit.TabIndex = 52;
@@ -666,16 +669,37 @@ namespace Game
             this.Exit.UseVisualStyleBackColor = true;
             this.Exit.Click += new System.EventHandler(this.button25_Click);
             // 
+            // Info
+            // 
+            this.Info.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Info.Location = new System.Drawing.Point(876, 481);
+            this.Info.Name = "Info";
+            this.Info.Size = new System.Drawing.Size(304, 90);
+            this.Info.TabIndex = 53;
+            this.Info.Text = "Информация";
+            this.Info.UseVisualStyleBackColor = true;
+            this.Info.Click += new System.EventHandler(this.Info_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.Save);
+            this.panel1.Controls.Add(this.Restart);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.Exit);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(392, 248);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(330, 323);
+            this.panel1.TabIndex = 54;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1257, 608);
-            this.Controls.Add(this.Exit);
-            this.Controls.Add(this.Restart);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.Save);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.Info);
             this.Controls.Add(this.sumi2);
             this.Controls.Add(this.sumi1);
             this.Controls.Add(this.Boxes);
@@ -686,8 +710,9 @@ namespace Game
             this.sumi1.PerformLayout();
             this.sumi2.ResumeLayout(false);
             this.sumi2.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -745,6 +770,8 @@ namespace Game
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button Restart;
         private System.Windows.Forms.Button Exit;
+        private System.Windows.Forms.Button Info;
+        private System.Windows.Forms.Panel panel1;
     }
 }
 

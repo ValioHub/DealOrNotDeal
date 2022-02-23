@@ -155,12 +155,12 @@ namespace Game
                 sumi1.Visible = false;
                 sumi2.Visible = false;
             }
-            if (offerCounter <= 19)
+            if (offerCounter <= 18)
             {
                 if ((offerCounter % 3) == 0)
                 {
                     GenerateNewOffer();
-                    DialogResult dialogResult = MessageBox.Show($"Имате нова оферта и тя е {string.Format("{0:0.00}", newOffer)} лв !", "Банкера предлага", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                    DialogResult dialogResult = MessageBox.Show($"Имате нова оферта и тя е {string.Format("{0:0.00}", newOffer)} лв !", "Банкера предлага", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     if (dialogResult == DialogResult.Yes)
                     {
                         finalValue = newOffer;
@@ -168,6 +168,7 @@ namespace Game
                         Boxes.Visible = false;
                         sumi1.Visible = false;
                         sumi2.Visible = false;
+                        panel1.Visible = true;
                     }
                 }
                 else
@@ -210,6 +211,7 @@ namespace Game
         {
             Generator();
             InitializeComponent();
+            panel1.Visible = false;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -492,6 +494,17 @@ namespace Game
         private void button25_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void Info_Click(object sender, EventArgs e)
+        {
+            Form3 Information = new Form3();
+            Information.ShowDialog();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

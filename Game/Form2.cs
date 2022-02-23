@@ -33,7 +33,6 @@ namespace Game
             }
             finally
             {
-                MessageBox.Show($"Yes", "Внимание", MessageBoxButtons.OK);
                 tsw.Close();
             }
         } // Запазване на елементи
