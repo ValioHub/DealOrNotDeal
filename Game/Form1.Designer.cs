@@ -617,9 +617,9 @@ namespace Game
             // Save
             // 
             this.Save.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Save.Location = new System.Drawing.Point(446, 443);
+            this.Save.Location = new System.Drawing.Point(418, 481);
             this.Save.Name = "Save";
-            this.Save.Size = new System.Drawing.Size(276, 90);
+            this.Save.Size = new System.Drawing.Size(304, 90);
             this.Save.TabIndex = 48;
             this.Save.Text = "Запазване на играча и неговата печалба";
             this.Save.UseVisualStyleBackColor = true;
@@ -629,9 +629,9 @@ namespace Game
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(439, 266);
+            this.label1.Location = new System.Drawing.Point(439, 258);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(293, 39);
+            this.label1.Size = new System.Drawing.Size(284, 38);
             this.label1.TabIndex = 49;
             this.label1.Text = "Вие спечелихте:";
             // 
@@ -641,15 +641,15 @@ namespace Game
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(439, 294);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(0, 39);
+            this.label2.Size = new System.Drawing.Size(0, 38);
             this.label2.TabIndex = 50;
             // 
             // Restart
             // 
             this.Restart.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Restart.Location = new System.Drawing.Point(446, 347);
+            this.Restart.Location = new System.Drawing.Point(418, 374);
             this.Restart.Name = "Restart";
-            this.Restart.Size = new System.Drawing.Size(126, 90);
+            this.Restart.Size = new System.Drawing.Size(154, 90);
             this.Restart.TabIndex = 51;
             this.Restart.Text = "Рестартиране на играта";
             this.Restart.UseVisualStyleBackColor = true;
@@ -658,7 +658,7 @@ namespace Game
             // Exit
             // 
             this.Exit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Exit.Location = new System.Drawing.Point(596, 347);
+            this.Exit.Location = new System.Drawing.Point(597, 374);
             this.Exit.Name = "Exit";
             this.Exit.Size = new System.Drawing.Size(126, 90);
             this.Exit.TabIndex = 52;

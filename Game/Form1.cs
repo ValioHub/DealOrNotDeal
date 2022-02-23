@@ -184,7 +184,7 @@ namespace Game
                 }
             }
         } // Обаждането на банкера
-        public Form1()
+        private void Generator()
         {
             int temp;
             for (int i = 0; i < 22; i++)
@@ -205,8 +205,11 @@ namespace Game
                 buttonList[i] = money[temp];
                 tempList[i] = temp;
             }
+        }
+        public Form1()
+        {
+            Generator();
             InitializeComponent();
-            
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -480,7 +483,6 @@ namespace Game
         {
             Application.Restart();
         }
-
         private void button23_Click(object sender, EventArgs e)
         {
             SetValueForText1 = string.Format("{0:0.00}", finalValue);
