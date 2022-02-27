@@ -145,9 +145,9 @@ namespace Game
             }
             return finalValue;
         }
-        private void OffertGenerate()
+        private void OffertGenerate() // Обаждането на банкера
         {
-            if (offerCounter == 22)
+            if (offerCounter == 22) // Край на играта
             {
                 finalValue = GetFinalValue();
                 label2.Text = finalValue.ToString();
@@ -155,7 +155,7 @@ namespace Game
                 sumi1.Visible = false;
                 sumi2.Visible = false;
             }
-            if (offerCounter == 21)
+            if (offerCounter == 21) // Последен избор
             {
                 var indexes = buttonFlag.Select((value, index) => new { value, index }).Where(b => b.value==false).Select(x => x.index).ToList();
                 var lastBox = indexes.First(i => i != selectedBox);
@@ -179,6 +179,7 @@ namespace Game
                     sumi1.Visible = false;
                     sumi2.Visible = false;
                     buttonFlag[lastBox] = true;
+                    panel1.Visible = true;
                 }
             }
             if (offerCounter <= 18)
@@ -210,7 +211,7 @@ namespace Game
                     }
                 }
             }
-        } // Обаждането на банкера
+        } 
         private void Generator() // Генериране на кутийте и техните суми
         {
             int temp;
@@ -233,18 +234,6 @@ namespace Game
                 tempList[i] = temp;
             }
         }
-        //private void ChooseBox()
-        //{
-        //    if (offerCounter == 0)
-        //    {
-        //        MessageBox.Show("Изберете вашата кутия", "Започване на играта", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        for (int i = 0; i < 23; i++)
-        //        {
-        //            finalValue = buttonList[i];
-        //            label3.Text = $"Вашата кутия е номер {buttonFlag[i]}";
-        //        }
-        //    }
-        //}
         public Form1()
         {
             Generator();
@@ -762,21 +751,21 @@ namespace Game
         {
         }
 
-        private void button24_Click(object sender, EventArgs e)
+        private void button24_Click(object sender, EventArgs e) // Рестартиране
         {
             Application.Restart();
         }
-        private void button23_Click(object sender, EventArgs e)
+        private void button23_Click(object sender, EventArgs e) // Отиване към highscore form
         {
             SetValueForText1 = string.Format("{0:0.00}", finalValue);
             Form2 Save = new Form2();
             Save.ShowDialog();
         }
-        private void button25_Click(object sender, EventArgs e)
+        private void button25_Click(object sender, EventArgs e) // Затваряне
         {
             Application.Exit();
         }
-        private void Info_Click(object sender, EventArgs e)
+        private void Info_Click(object sender, EventArgs e) // Отиване към information form
         {
             Form3 Information = new Form3();
             Information.ShowDialog();
