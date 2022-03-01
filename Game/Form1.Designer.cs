@@ -704,7 +704,7 @@ namespace Game
             this.Controls.Add(this.sumi1);
             this.Controls.Add(this.Boxes);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Сделка или не";
             this.Boxes.ResumeLayout(false);
             this.sumi1.ResumeLayout(false);
             this.sumi1.PerformLayout();

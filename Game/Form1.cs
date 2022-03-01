@@ -281,7 +281,7 @@ namespace Game
                 all -= buttonList[1];
                 allBoxex--;
                 buttonFlag[1] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 2 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -304,7 +304,7 @@ namespace Game
                 all -= buttonList[2];
                 allBoxex--;
                 buttonFlag[2] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 3 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -328,7 +328,7 @@ namespace Game
                 all -= buttonList[3];
                 allBoxex--;
                 buttonFlag[3] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 4 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -351,7 +351,7 @@ namespace Game
                 all -= buttonList[4];
                 allBoxex--;
                 buttonFlag[4] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 5 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -374,7 +374,7 @@ namespace Game
                 all -= buttonList[5];
                 allBoxex--;
                 buttonFlag[5] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 6 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -397,7 +397,7 @@ namespace Game
                 all -= buttonList[6];
                 allBoxex--;
                 buttonFlag[6] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 7 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -420,7 +420,7 @@ namespace Game
                 all -= buttonList[7];
                 allBoxex--;
                 buttonFlag[7] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 8 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -443,7 +443,7 @@ namespace Game
                 all -= buttonList[8];
                 allBoxex--;
                 buttonFlag[8] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 9 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -466,7 +466,7 @@ namespace Game
                 all -= buttonList[9];
                 allBoxex--;
                 buttonFlag[9] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 10 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -489,7 +489,7 @@ namespace Game
                 all -= buttonList[10];
                 allBoxex--;
                 buttonFlag[10] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 11 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -512,7 +512,7 @@ namespace Game
                 all -= buttonList[11];
                 allBoxex--;
                 buttonFlag[11] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 12 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -535,7 +535,7 @@ namespace Game
                 all -= buttonList[12];
                 allBoxex--;
                 buttonFlag[12] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 13 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -558,7 +558,7 @@ namespace Game
                 all -= buttonList[13];
                 allBoxex--;
                 buttonFlag[13] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 14 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -581,7 +581,7 @@ namespace Game
                 all -= buttonList[14];
                 allBoxex--;
                 buttonFlag[14] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 15 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -604,7 +604,7 @@ namespace Game
                 all -= buttonList[15];
                 allBoxex--;
                 buttonFlag[15] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 16 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -627,7 +627,7 @@ namespace Game
                 all -= buttonList[16];
                 allBoxex--;
                 buttonFlag[16] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 17 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -650,7 +650,7 @@ namespace Game
                 all -= buttonList[17];
                 allBoxex--;
                 buttonFlag[17] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 18 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -673,7 +673,7 @@ namespace Game
                 all -= buttonList[18];
                 allBoxex--;
                 buttonFlag[18] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 19 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -696,7 +696,7 @@ namespace Game
                 all -= buttonList[19];
                 allBoxex--;
                 buttonFlag[19] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 20 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -719,7 +719,7 @@ namespace Game
                 all -= buttonList[20];
                 allBoxex--;
                 buttonFlag[20] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 21 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
@@ -742,7 +742,7 @@ namespace Game
                 all -= buttonList[21];
                 allBoxex--;
                 buttonFlag[21] = true;
-                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 1 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show($"Отворихте {tempLabel} лв! ", "Кутия номер 22 съдържа:", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             offerCounter++;
             OffertGenerate();
