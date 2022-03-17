@@ -159,7 +159,7 @@ namespace Game
             {
                 var indexes = buttonFlag.Select((value, index) => new { value, index }).Where(b => b.value==false).Select(x => x.index).ToList();
                 var lastBox = indexes.First(i => i != selectedBox);
-                DialogResult dialogResult=MessageBox.Show($"Искате ли да смените кутия {selectedBox +1} с кутия {lastBox +1}", "Последен избор", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult dialogResult=MessageBox.Show($"Искате ли да смените кутия {selectedBox +1} с кутия {lastBox +1}.", "Последен избор", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
                     finalValue = GetFinalValue();
@@ -174,7 +174,7 @@ namespace Game
                 if (dialogResult == DialogResult.No)
                 {
                     finalValue = GetFinalValue();
-                    label2.Text = finalValue.ToString();
+                    label2.Text = string.Format("{0:0.00}", finalValue) + " лв";
                     Boxes.Visible = false;
                     sumi1.Visible = false;
                     sumi2.Visible = false;
@@ -191,7 +191,7 @@ namespace Game
                     if (dialogResult == DialogResult.Yes)
                     {
                         finalValue = newOffer;
-                        label2.Text = string.Format("{0:0.00}", finalValue) + "лв";
+                        label2.Text = string.Format("{0:0.00}", finalValue) + " лв";
                         Boxes.Visible = false;
                         sumi1.Visible = false;
                         sumi2.Visible = false;
